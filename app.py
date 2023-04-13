@@ -12,5 +12,10 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/price')
+def price():
+    return render_template('price.html')
+
+
 if __name__ == '__main__':
     app.run()
