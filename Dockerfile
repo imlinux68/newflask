@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN python -m venv virtenv && pip install flask
 
-COPY app.py .
+COPY . .
 
 EXPOSE 5000
 
