@@ -9,5 +9,10 @@
 <body>
     <!-- <h1>MOVIE APP</h1>
     <img src={{url_for('static', filename='worldopensource.jpg')}} alt="piture" height="350" with="350"> -->
+    <ul>
+    {% for color in colors %}
+        <li>{{color}}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>

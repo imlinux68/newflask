@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    colors = ['Red', 'Green', 'Blue']
+    return render_template('index.html', colors=colors)
 
 
 @app.route('/redirect')
