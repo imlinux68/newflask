@@ -14,5 +14,10 @@
         <li>{{color}}</li>
     {% endfor %}
     </ul>
+    {% if 'Green' in colors %}    
+        <p>Green in the list</p>
+    {% else %}
+        <p>Color is not in the list</p>
+    { %endif %}
 </body>
 </html>
