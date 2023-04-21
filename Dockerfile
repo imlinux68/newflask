@@ -2,7 +2,7 @@ FROM python:alpine
 
 WORKDIR /app
 
-RUN python -m venv virtenv && pip install flask
+RUN python -m venv virtenv && pip install flask flask-bootstrap
 
 COPY . .
 
