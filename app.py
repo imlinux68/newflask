@@ -1,14 +1,30 @@
 from flask import Flask, render_template, url_for, redirect
 from flask_bootstrap import Bootstrap
+import mysql.connector
 
 
 app = Flask(__name__)
 Bootstrap(app)
 
+### DB CONFIG ###
+
+
+connection = mysql.connector.connect(
+    user='root', 
+    password='root', 
+    host='mysql', 
+    port="3306",
+    database='my_database')
+print("DB connected")
+
+mycursor = connection.cursor()
+mycursor.execute('CREATE TABLE IF NOT EXISTS user (user_name VARCHAR(30));')
+
 @app.route('/')
 def index():
-    colors = ['Red', 'Green', 'Blue']
-    return render_template('index.html', colors=colors)
+    mycursor.execute("INSERT INTO user VALUES(%s)", (['John']))
+    connection.commit()
+    return render_template('index.html')
 
 
 @app.route('/redirect')

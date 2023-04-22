@@ -1,0 +1,25 @@
+services:
+  pythonapp:
+    build: .
+    depends_on:
+      - mysql
+    restart: always
+    ports:
+      - '5001:5000'
+    stdin_open: true 
+    tty: true
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'my_database'      
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
