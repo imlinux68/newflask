@@ -1,6 +1,6 @@
 services:
   pythonapp:
-    build: .
+    image: imlinux68/pythonflask:v13
     depends_on:
       - mysql
     restart: always
